@@ -8,6 +8,8 @@ This is my currently set of configuration files for my [Home Assistant](https://
 * Virtual appliance [VMDK](https://www.home-assistant.io/hassio/installation) on a Dell Latitude E6440
 * [Raspberry Pi 3 Model B and B+ 32bit](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus).
 
+On the virtual device runs the master instance of [Hassio](https://www.home-assistant.io/hassio/installation), and on de Pie runs a [slave instance](https://github.com/lukas-hetzenecker/home-assistant-remote) via [HACS](https://github.com/hacs/integration) installation written by Lukas H.
+
 ## License
 
 Copyright (c) 2019 Antoine van den Hurk
