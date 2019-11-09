@@ -10,6 +10,13 @@ This is my currently set of configuration files for my [Home Assistant](https://
 
 On the virtual device runs the master instance of [Hassio](https://www.home-assistant.io/hassio/installation), and on de Pie runs a [slave instance](https://github.com/lukas-hetzenecker/home-assistant-remote) via [HACS](https://github.com/hacs/integration) installation written by Lukas H.
 
+My pie is located in the meter cabinet and connected via [USB-P1 kabel](https://www.robbshop.nl/slimme-meter-kabel) to the smart electricity and gasmeter. The [DSMR](https://www.home-assistant.io/integrations/dsmr) sensor integrates the gas and electricity consumption and production. Electricity production is provided by 22 solar panels. A three phase inverter provides electricity. 
+
+# My smartdevices
+* []()
+* [Raspberry Pi 3 Model B and B+ 32bit](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus)
+* [Audi A3 Sportback e-tron](https://www.audi.nl/nl/web/nl/modellen/a3/a3-sportback-e-tron.html)
+* [Goodwe inverter](https://www.goodwe.com)
 ## License
 
 Copyright (c) 2019 Antoine van den Hurk
