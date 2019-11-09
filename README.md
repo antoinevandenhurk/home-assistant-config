@@ -4,8 +4,11 @@
 
 This is my personal Home Assistant configuration, for sprinklering my garden.
 
-This is my currently sprinkler set of configuration files for my [Home Assistant](https://home-assistant.io) running on Raspberry Pi.
-If you are intested in following my progress be sure ⭐️ Star this repository.
+This is my currently sprinkler set of configuration files for my [Home Assistant](https://home-assistant.io) running on two devices. 
+* Virtual appliance [VMDK] (https://github.com/home-assistant/hassos/releases/download/2.12/hassos_ova-2.12.vmdk.gz) on a Dell Latitude E6440
+* Raspberry Pi 3 Model B and B+ 32bit.
+
+If you like this repo, be sure ⭐️ Star this repository.
 
 ![My Home Assistant Default View](HA_prev.png)
 
