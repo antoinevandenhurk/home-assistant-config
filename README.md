@@ -1,7 +1,8 @@
-# Test
-Dit is een test reposotory
+# My Home Assistant Configuration
 
-# Antoine's Home Assistant Configuration Files
+## About
+
+This is my personal Home Assistant configuration, for sprinklering my garden.
 
 This is my currently sprinkler set of configuration files for my [Home Assistant](https://home-assistant.io) running on Raspberry Pi.
 If you are intested in following my progress be sure ⭐️ Star this repository.
