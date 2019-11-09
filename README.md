@@ -7,7 +7,7 @@ This is my personal Home Assistant configuration, for sprinklering my garden.
 This is my currently sprinkler set of configuration files for my [Home Assistant](https://home-assistant.io) running on Raspberry Pi.
 If you are intested in following my progress be sure ⭐️ Star this repository.
 
-![My Home Assistant Default View](default_view.jpg)
+![My Home Assistant Default View](HA_prev.png)
 
 --switches.yaml--
 
