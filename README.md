@@ -70,7 +70,7 @@ When you have smart devices at your disposal, I think you can make optimum use o
 To be able to clearly monitor all the smart components, I have made [floor plans](https://github.com/pkozul/ha-floorplan/blob/master/own-floorplan-svg-file-tutorial.md) for each floor. These floor plans are [interactive](https://github.com/pkozul/ha-floorplan), so you can also operate the devices. Lamps light up in an air condition color depending on whether cooling / heating takes place. The security camera shows direct images of the driveway. The room / outside temperatures and moisture sensors show the current results. All housemates are shown by presence. The smart doors / shutters and awning light up when they are open. In the future, these floor plans will be shown on screen on the wall when the central heating automation is complete.
 
 ## License
-Copyright (c) 2019 Antoine van den Hurk
+Copyright (c) 2019 AvdH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
