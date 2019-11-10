@@ -1,6 +1,7 @@
 # My Home Assistant installation
 This is my personal Home Assistant compilation, for home automations. Home Assistant is an open source home automation software that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. If you like this repo, be sure ⭐️ Star this repository.
 
+
 ![My Home Assistant Default View](HA_prev.gif)
 
 # My smartdevices
@@ -41,13 +42,11 @@ This is my personal Home Assistant compilation, for home automations. Home Assis
 * [2-Way sprinkler valve ball AC230](https://www.amazon.de/gp/your-account/order-history/ref=ppx_yo_dt_b_pagination_1_2?ie=UTF8&orderFilter=year-2018&search=&startIndex=10)
 * [4 ways white distribution box with fixed din rail](https://www.aliexpress.com/item/32620949631.html?spm=a2g0s.9042311.0.0.27424c4dqFueKH)
 * [CH340 module USB to TTL CH340G](https://www.aliexpress.com/item/32713914780.html?spm=a2g0s.9042311.0.0.27424c4dqFueKH)
-spm=a2g0s.9042311.0.0.67f44c4dw5HyWx)
 * [NodeMcu V3 V2 Lua module CH340/CP2102 Wireless](https://www.aliexpress.com/item/32656401198.html?spm=a2g0s.9042311.0.0.67f44c4dw5HyWx)
 * [WeMos D1 Mini WiFi Development Board ESP8266 ESP](https://www.aliexpress.com/item/32843941131.html?)
 * [WeMos D1 CH340 CH340G WiFi Development Board ESP8266 ESP](https://www.aliexpress.com/item/32961435915.html?spm=a2g0s.9042311.0.0.27424c4drXMrud)
 * [4 Channel 5V Relay Swtich Expansion Drive Board LED Indicator Relay Shiel](https://www.aliexpress.com/item/32907851752.html?spm=a2g0s.9042311.0.0.27424c4drXMrud)
 * [DHT22/AM2302 Digital Temperature and Humidity Sensor with Wire Wire](https://www.amazon.de/gp/product/B01DB8JH4M/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
-* []()
 
 ## About
 This are currently my devices for my [Home Assistant assembly](https://home-assistant.io) which is running on two devices: 
