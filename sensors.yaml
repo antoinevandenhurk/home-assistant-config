@@ -39,3 +39,9 @@
 #     - precipitation_forecast_average
 #     - precipitation_forecast_total
 #
+- id: Waze travel 01
+  platform: waze_travel_time
+  name: reistijd
+  origin: device_tracker.yourdevice
+  destination: zone.home
+  region: 'EU'

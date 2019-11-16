@@ -1,0 +1,9 @@
+#Input selector destination
+reisbestemming:
+  name: Bestemming
+  options:
+    - Thuis
+    - Werk
+    - Onbekend
+  initial: Onbekend
+  icon: mdi:highway
