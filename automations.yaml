@@ -1,0 +1,62 @@
+- id: Sproeiautomaat 01
+  alias: Sproeiautomaat
+  trigger:
+  - at: 06:05:00
+    platform: time
+  condition:
+  - below: '10'
+    condition: numeric_state
+    entity_id: sensor.br_rain_5d
+  - condition: time
+    weekday:
+    - fri
+  action:
+  - data:
+      entity_id: switch.sproeier_achtertuin
+    service: switch.turn_on
+  - data:
+      message: Sproeisessie wordt ingeschakeld
+      target:
+      - device/gsm_antoine
+    service: notify.push_notify
+- id: Sproeiautomaat 02
+  alias: Sproeiautomaat afsluiten
+  trigger:
+  - at: 06:30:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: switch.sproeier_achtertuin
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.sproeier_achtertuin
+    service: switch.turn_off
+  - data:
+      message: Sproeisessie wordt uitgeschakeld
+      target:
+      - device/gsm_antoine
+    service: notify.push_notify
+- id: Sproeiautomaat 03
+  alias: Sproeitimer
+  trigger:
+  - entity_id: switch.sproei_timer
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.sproeitimer_min.state | int }}:00
+  - data:
+      entity_id: switch.sproeier_voortuin
+    service: switch.turn_off
+  - data:
+      entity_id: switch.sproeier_achtertuin
+    service: switch.turn_off
+  - data:
+      message: Sproeisessie wordt uitgeschakeld!
+      target:
+      - device/gsm_antoine
+    service: notify.push_notify
+  - data:
+      entity_id: switch.sproei_timer
+    service: switch.turn_off
