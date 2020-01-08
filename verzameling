@@ -1,0 +1,154 @@
+# Example automation.yaml 
+- id: 'voorbeeld'
+  alias: Camera_snapshots
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.achterdeurbel
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - service: rest_command.oprit_camera_2
+  - delay:
+      seconds: 1
+  - data:
+      entity_id: camera.kkmoon_oprit
+      filename: /config/www/snapshots/snapshot1.jpg
+    service: camera.snapshot
+  - data:
+      message: Er staat iemand aan de achterdeur!
+      title: '{{ as_timestamp(now()) | timestamp_custom(''%H:%M'', true) }}  Deurbel'
+      data:
+        tag: achterdeuralert
+        image: https://hurk.duckdns.org/local/snapshots/snapshot1.jpg
+        url: https://hurk.duckdns.org/lovelace/security
+        vibrate:
+        - 300
+        - 100
+        - 400
+        renotify: 1
+        ttl: 86400
+        priority: high
+    service: notify.html5_notify
+  - delay:
+      seconds: 0
+  - data:
+      entity_id: camera.kkmoon_oprit
+      filename: /config/www/snapshots/snapshot2.jpg
+    service: camera.snapshot
+  - delay:
+      seconds: 0
+  - data:
+      entity_id: camera.kkmoon_oprit
+      filename: /config/www/snapshots/snapshot3.jpg
+    service: camera.snapshot
+  - delay:
+      seconds: 60
+  - service: rest_command.oprit_camera_1
+
+-------------------------------------------------------------------------------------
+# Example sensors.yaml 
+- platform: mqtt
+  name: "Vaatwasser status"
+  state_topic: "hass/state/vaatwasser"
+  icon: 'mdi:dishwasher'
+
+# Example automation.yaml 
+- id: 'voorbeeld'
+  alias: Vaatwasser status start
+  description: ''
+  trigger:
+  - above: '10'
+    entity_id: sensor.vaatwasser_power
+    for: 00:02:00
+    platform: numeric_state
+  condition:
+  - condition: template
+    value_template: '{{ states.sensor.vaatwasser_status.state != ''Afwassen'' }}'
+  action:
+  - alias: ''
+    data:
+      payload: Afwassen
+      qos: 2
+      retain: true
+      topic: hass/state/vaatwasser
+    service: mqtt.publish
+
+# Example automation.yaml 
+- id: 'voorbeeld'
+- id: 1575713539599B
+  alias: Vaatwasser status uit
+  description: ''
+  trigger:
+  - below: '3'
+    entity_id: sensor.vaatwasser_power
+    for: 00:05:00
+    platform: numeric_state
+  condition:
+  - condition: template
+    value_template: '{{ states.sensor.vaatwasser_status.state != ''Uit'' }}'
+  action:
+  - alias: ''
+    data:
+      payload: Uit
+      qos: 2
+      retain: true
+      topic: hass/state/vaatwasser
+    service: mqtt.publish
+
+# Example automation.yaml 
+- id: 'voorbeeld'
+  alias: Vaatwasser status klaar
+  description: ''
+  trigger:
+  - entity_id: sensor.vaatwasser_status
+    from: Afwassen
+    platform: state
+    to: Uit
+  condition:
+  action:
+  - data:
+      message: De vaatwasser is klaar!
+    service: notify.html5_notify
+  - service: media_player.volume_set
+    entity_id: media_player.jbl_link104986
+    data:
+      volume_level: 0.55
+  - service: tts.google_translate_say
+    data_template:
+      entity_id: media_player.jbl_link104986
+      message: De vaatwasser is klaar!
+-------------------------------------------------------------------------------------
+
+# Example sensors.yaml # https://jouwsubdomein.duckdns.org/hacs/repository/228649088
+- platform: p2000
+  name: Oss 112
+  regios: 21
+  disciplines: 1,2,3,4
+  radius: 7500
+  scan_interval: 30
+  latitude: !secret latitude_password
+  longitude: !secret longitude_password
+- platform: template
+  sensors:
+    oss_112_bericht: #   Voorbeeld voor afgekapte spraakberichten
+      value_template: "{{ states.sensor.oss_112.state.split('Obj')[0]| replace ('A1','Ambulance')| replace ('A2','Ambulance')| replace ('ALARM','Brandalarm')| replace ('DIA','')| replace ('(','')|replace (')','')|replace (':','')| lower |trim }}"
+
+# Example automation.yaml 
+- id: '1577286547452'
+  alias: 112 melding
+  description: ''
+  trigger:
+  - entity_id: sensor.oss_112
+    platform: state
+  condition: []
+  action:
+  - service: media_player.volume_set
+    entity_id: media_player.jbl_link104986
+    data:
+      volume_level: 0.55
+  - service: tts.google_translate_say
+    data_template:
+      entity_id: media_player.jbl_link104986
+      message: 112 melding van {{ states.sensor.oss_112_bericht.state}}
