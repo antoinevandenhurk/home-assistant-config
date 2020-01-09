@@ -21,8 +21,8 @@
       title: '{{ as_timestamp(now()) | timestamp_custom(''%H:%M'', true) }}  Deurbel'
       data:
         tag: achterdeuralert
-        image: https://hurk.duckdns.org/local/snapshots/snapshot1.jpg
-        url: https://hurk.duckdns.org/lovelace/security
+        image: https://yoursubdomaim.duckdns.org/local/snapshots/snapshot1.jpg
+        url: https://yoursubdomaim.duckdns.org/lovelace/security
         vibrate:
         - 300
         - 100
@@ -121,7 +121,7 @@
       message: De vaatwasser is klaar!
 -------------------------------------------------------------------------------------
 
-# Example sensors.yaml # https://jouwsubdomein.duckdns.org/hacs/repository/228649088
+# Example sensors.yaml # https://yoursubdomaim.duckdns.org/hacs/repository/228649088
 - platform: p2000
   name: Oss 112
   regios: 21
