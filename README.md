@@ -51,7 +51,7 @@ This is my personal Home Assistant compilation, for home automations. Home Assis
 * [DHT22/AM2302 Digital Temperature and Humidity Sensor with Wire Wire](https://www.amazon.de/gp/product/B01DB8JH4M/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 * [Galaxy Tab 3 (10.1, LTE) GT-P5220](https://www.samsung.com/nl/support/model/GT-P5220ZWAPHN/)
 * [Eneco’s toon thermostaat](https://ehoco.nl/rooten-van-enecos-toon-thermostaat/)
-* [Pioneer VSX-933](https://tweakers.net/pricewatch/1178925/pioneer-vsx-933-zwart/specificaties/)
+* [Pioneer VSX-933 full streaming equipment, 7.2 channel receiver 7x135 Watt](https://tweakers.net/pricewatch/1178925/pioneer-vsx-933-zwart/specificaties/)
 
 ## About
 This are currently my devices for my [Home Assistant assembly](https://home-assistant.io) which is running on two devices: 
